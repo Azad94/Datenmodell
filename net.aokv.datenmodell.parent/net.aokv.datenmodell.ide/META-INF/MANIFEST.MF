@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: net.aokv.datenmodell.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: net.aokv.datenmodell.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.aokv.datenmodell,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: net.aokv.ide.contentassist.antlr.internal,
+ net.aokv.ide.contentassist.antlr
+

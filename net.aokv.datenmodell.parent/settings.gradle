@@ -1,0 +1,4 @@
+include 'net.aokv.datenmodell'
+include 'net.aokv.datenmodell.ide'
+include 'net.aokv.datenmodell.web'
+include 'net.aokv.datenmodell.tests'

@@ -1,0 +1,33 @@
+grammar net.aokv.Datenmodell with org.eclipse.xtext.common.Terminals
+
+generate datenmodell "http://www.aokv.net/Datenmodell"
+
+Datenmodell:
+	elemente+=AbstraktesDatenmodellElement*;
+
+AbstraktesDatenmodellElement:
+	Datendefinition | Datennutzung;
+
+Datendefinition:
+	Artikel name=ID 'hat' (attribute+=Attribut*) '.';
+
+Attribut:
+	name=ID 'vom Typ' datentyp=Datentyp 'und'?;
+
+Datennutzung:
+	'Es gibt' KleinerArtikel referenz=[Datendefinition] 'mit' referenzen+=Attributsreferenz* '.';
+
+Attributsreferenz:
+	attribut=[Attribut] wert=Attributswert 'und'?;
+
+Artikel:
+	'Ein' | 'Eine';
+
+KleinerArtikel:
+	'ein' | 'eine' | 'einen';
+
+Attributswert:
+	STRING | INT;
+
+enum Datentyp:
+	Text | Zahl;

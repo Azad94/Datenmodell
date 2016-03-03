@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datenmodell" nsURI="http://www.aokv.net/Datenmodell" nsPrefix="datenmodell">
+  <eClassifiers xsi:type="ecore:EClass" name="Datenmodell">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elemente" upperBound="-1"
+        eType="#//AbstraktesDatenmodellElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstraktesDatenmodellElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Datendefinition" eSuperTypes="#//AbstraktesDatenmodellElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Attribut" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribut">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datentyp" eType="#//Datentyp"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Datennutzung" eSuperTypes="#//AbstraktesDatenmodellElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenz" eType="#//Datendefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenzen" upperBound="-1"
+        eType="#//Attributsreferenz" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attributsreferenz">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribut" eType="#//Attribut"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wert" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Datentyp">
+    <eLiterals name="Text" literal="Text"/>
+    <eLiterals name="Zahl" value="1" literal="Zahl"/>
+  </eClassifiers>
+</ecore:EPackage>
