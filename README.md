@@ -15,5 +15,5 @@ ausgeführt werden.
 
 
 
-[download]: "https://eclipse.org/Xtext/download.html" "Eclipse Download"
-[gradle]: "http://gradle.org/" "Gradle"
+[download]: https://eclipse.org/Xtext/download.html "Eclipse Download"
+[gradle]: http://gradle.org/ "Gradle"
